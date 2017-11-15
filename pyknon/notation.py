@@ -1,7 +1,7 @@
 import re
 from fractions import Fraction
 
-REGEX_NOTE = re.compile("([a-gA-GRr])([b#]*)([0-9]*)([.]*)([',]*)")
+REGEX_NOTE = re.compile("([a-gA-GRr])((?:b|#)*)([0-9]*)(\.*)((?:'|,)*)")
 
 
 class NotationError(Exception):
