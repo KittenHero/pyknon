@@ -6,7 +6,6 @@ generate actual music you should use the music module.
 
 """
 
-from __future__ import division
 from itertools import combinations, chain
 from fractions import Fraction
 

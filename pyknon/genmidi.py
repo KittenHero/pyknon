@@ -1,5 +1,5 @@
 from pyknon.MidiFile import MIDIFile
-from pyknon.music import Note, NoteSeq, Rest
+from pyknon.music import *
 import collections
 
 

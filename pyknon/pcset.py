@@ -1,7 +1,5 @@
 from pyknon.pc_sets import PC_SETS
-from pyknon.simplemusic import (mod12, interval, rotate, all_intervals, rotate_set,
-                                inversion, transposition_startswith,
-                                inversion_first_note)
+from pyknon.simplemusic import *
 
 
 def set_sizes(pset):
