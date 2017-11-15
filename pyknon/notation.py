@@ -17,23 +17,23 @@ def parse_octave(string):
     """5 is central octave. Return 5 as a fall-back"""
 
     if string:
-        size = string.count(string[0])
-        return size + 4 if string[0] == "'" else -size + 5
+        size = len(string)
+        return size + 4 if "'" in string else -size + 5
     else:
         return 5
 
 
 def parse_dur(dur, dots=""):
-    if dur == 0 or dur == "breve" or dur == "brevis":
+    if dur in [0, "breve", "brevis"]:
         base = 2
     elif dur == "longa":
         base = 4
     elif dur == "maxima":
         base = 8
     else:
-        base = int(dur) ** -1
+        base = 1 / int(dur)
 
-    return sum([base / (2 ** x) for x in range(0, len(dots) + 1)])
+    return base * (2 - 0.5**len(dots))
 
 
 def parse_note(note, volume=120, prev_octave=5, prev_dur=0.25):
